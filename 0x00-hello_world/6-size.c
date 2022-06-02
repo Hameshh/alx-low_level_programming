@@ -1,7 +1,8 @@
-#include <unistd.h>
+#include<stido.h>
 /**
- * main - Entry point
- * Return: Always 0 (Success)
+ * main - program that prints size of data types
+ *
+ * Return: Always 0 
  */
 int main(void)
 {
