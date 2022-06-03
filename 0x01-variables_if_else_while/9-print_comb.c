@@ -3,7 +3,7 @@
 /**
  * main - Prints a series of numbers with commas and spaces.
  * 
- * Return: Always 0 (Success);
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -12,14 +12,13 @@ int main(void)
 	for (i = '0'; i <= '9'; i++)
 	{
 		putchar(i);
-
 		if (i != '9')
 		{
 			putchar(',');
 			putchar(' ');
 		}
 	}
-	putchar('\n');
 
+	putchar('\n');
 	return (0);
 }
