@@ -1,25 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - Prints all possible combinations of single-digit numbers.
+ * main - Prints a series of nums with commas
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int num;
+	int b;
 
-	for (num = 0; num <= 10; num++)
+	for (b = '0'; b <= '9'; b++)
 	{
-		putchar((num % 10) + '0');
-		if (num == 9)
-			continue;
-
-		putchar(',');
-		putchar(' ');
+		putchar(b);
+		if (b != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 
-	putchar('\n');
-
-	return (0);
-}
