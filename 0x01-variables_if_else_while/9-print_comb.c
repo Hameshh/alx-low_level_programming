@@ -2,17 +2,17 @@
 
 /**
  * main - Prints a series of numbers with commas and spaces.
- * 
+ *
  * Return: Always 0.
  */
 int main(void)
 {
-	int i;
+	int num;
 
-	for (i = '0'; i <= '9'; i++)
+	for (num = '0'; num <= '9'; num++)
 	{
-		putchar(i);
-		if (i != '9')
+		putchar(num);
+		if (num != '9')
 		{
 			putchar(',');
 			putchar(' ');
@@ -20,5 +20,6 @@ int main(void)
 	}
 
 	putchar('\n');
+
 	return (0);
 }
