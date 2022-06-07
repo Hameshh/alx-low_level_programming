@@ -5,7 +5,7 @@
  * Description: prints lowercase alphabet
  * Return: void
  */
-void print alphabet(void)
+void print_alphabet(void)
 {
 	char c;
 
