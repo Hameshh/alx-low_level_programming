@@ -2,8 +2,6 @@
 
 /**
  * pring_alphabet - prints the alphabet in lowercase a-z.
- *
- * Description: desc
  * Return: void
  */
 void print_alphabet(void)
