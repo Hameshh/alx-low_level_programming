@@ -8,26 +8,21 @@
  */
 int _atoi(char *s)
 {
-	int i;
-	int num = 0;
-	int sign = 1;
+	int i, j, n, m;
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = n = 0;
+	m = 1;
+	while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
 	{
-		if (s[i] == '-')
-			sign *= -1;
-
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			for (; s[i] >= '0' && s[i] <= '9'; i++)
-			{
-				num = num * 10 + (s[i] - 48);
-			}
-			break;
-		}
+		if (*(s + i) == '-')
+			m *= -1;
+		i++;
 	}
-	if (sign == -1)
-		num *= sign;
-
-	return (num);
+	j = i;
+	while ((*(s + j) >= '0') && (*(s + j) <= '9'))
+	{
+		n = n * 10 + m * (*(s + j) - '0');
+		j++;
+	}
+	return (n);
 }
