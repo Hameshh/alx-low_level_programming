@@ -1,13 +1,11 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer.
- * only using the putchar function.
- * noarrays and pointers.
- * @n: integer to be printed.
- * void.
+ * print_number - prints an integer
+ * @n: input integer
  * Return: no return.
  */
+
 void print_number(int n)
 {
 	unsigned int m, d, count;
