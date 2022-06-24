@@ -1,57 +1,50 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
-#include <string.h>
+
 /**
- * checker - checks for valid input
- * @argc: argument count
- * @i: counter for argv[]
- * @j: counter for argv[][]
- * @argv: argument vector
- * Return: 0 on success, 1 on failure
+ * main- Program that prints the minimun number of coins to make change.
+ * @argc: Integer
+ * @argv: Character
+ * Return: 0
  */
-int checker(int argc, int i, unsigned int j, char *argv[])
-{
-	for (i = 1; i <= argc; i++)
-		for (j = 0; argv[i] != '\0' && j < strlen(argv[i]); j++)
-			if (isdigit(argv[i][j]) == 0)
-				return (1);
-	return (0);
-}
-/**
- * main - Prints the minimum number of coins
- * to make change for an amount of cents.
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 on success
- */
+
 int main(int argc, char *argv[])
 {
-	unsigned int cents;
+	/**
+	 * Buscar el mímimo de monedas para cambiar la cantidad de dinero
+	 * pasado por argumento
+	 * si pasan 10 se necesita una sola moneda de 10 centavos = 1
+	 * para 100 4 monedas de 25 centavos = 4
+	 * 101 4 monedas de 25 centavos y una de un centavo = 5
+	 * para 13 una moneda de 10 centavos una moneda de 2 centavos y
+	 * una moneda de un centavo =3
+	 */
+
+	int change;
 	int coins;
 
-	cents = coins = 0;
-	if (argc == 2)
+	coins = 0;
+
+	if (argc != 2)
 	{
-		if (argv[1][0] == '-')
-			printf("0\n");
-		if (checker(argc, 1, 0, argv) == 0)
-		{
-			cents = atoi(argv[1]);
-			for ( ; cents >= 25; coins++, cents -= 25)
-				;
-			for ( ; cents >= 10; coins++, cents -= 10)
-				;
-			for ( ; cents >= 5; coins++, cents -= 5)
-				;
-			for ( ; cents >= 2; coins++, cents -= 2)
-				;
-			for ( ; cents >= 1; coins++, cents--)
-				;
-			printf("%d\n", coins);
-		}
-	}
-	else
 		printf("Error\n");
+		return (1);
+	}
+	change = atoi(argv[1]);
+	while (change > 0)
+	{
+		if (change >= 25)
+			change = change - 25;
+		else if (change >= 10)
+			change = change - 10;
+		else if (change >= 5)
+			change = change - 5;
+		else if (change >= 2)
+			change = change - 2;
+		else
+			change = change - 1;
+		coins++;
+	}
+	printf("%i\n", coins);
 	return (0);
 }
